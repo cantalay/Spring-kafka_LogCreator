@@ -14,7 +14,6 @@ import java.util.Date;
 @RestController
 @RequestMapping("/")
 public class CreatorController {
-LogFileListener logFileListener = new LogFileListener();
 
     @GetMapping("/create")
     public void logToFile(Integer logCount) {

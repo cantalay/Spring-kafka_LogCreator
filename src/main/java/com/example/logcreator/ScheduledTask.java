@@ -13,7 +13,7 @@ public class ScheduledTask {
     private LogCreatorService logCreatorService;
 
     @Scheduled(fixedRate = 200)
-    public void scheduleTaskWithFixedRate(){
+    public void scheduleTaskWithFixedRate() {
         logCreatorService.writeLogToFile();
     }
 

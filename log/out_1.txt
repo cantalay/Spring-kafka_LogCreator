@@ -1,0 +1,9 @@
+2019-07-31 15:10:57:859 WARN Moscov Hello-from-Moscov
+2019-07-31 15:10:58:059 FATAL Moscov Hello-from-Moscov
+2019-07-31 15:10:58:264 WARN Moscov Hello-from-Moscov
+2019-07-31 15:10:58:464 WARN Tokyo Hello-from-Tokyo
+2019-07-31 15:10:58:659 WARN London Hello-from-London
+2019-07-31 15:10:58:864 FATAL Moscov Hello-from-Moscov
+2019-07-31 15:10:59:064 WARN Istanbul Hello-from-Istanbul
+2019-07-31 15:10:59:264 DEBUG Moscov Hello-from-Moscov
+2019-07-31 15:10:59:464 DEBUG Moscov Hello-from-Moscov

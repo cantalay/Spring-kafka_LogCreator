@@ -11,9 +11,9 @@ import java.util.Date;
 
 @Service
 public class LogCreatorService {
-    public static String filePath = "logs";
-    public static Integer filePathCount = 1;
-    public static final int MAX_FILE_SIZE = 1024 * 1024 * 2;
+    private static String filePath = "log/out";
+    private static Integer filePathCount = 1;
+    private static final int MAX_FILE_SIZE = 1024 * 1024 * 2;
     private int count = 0;
 
     SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS");
