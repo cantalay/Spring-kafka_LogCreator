@@ -1,3 +1,3 @@
 # LogCreator
 
-Spring + KafkaStreams + Kafka Producer and Consumer Application. 
+Spring + KafkaStreams + Kafka Producer Application. 
