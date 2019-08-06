@@ -1,18 +1,22 @@
 package com.example.logcreator.listener;
+import com.example.logcreator.producer.KafkaLogProducer;
 import org.apache.commons.io.monitor.FileAlterationListener;
 import org.apache.commons.io.monitor.FileAlterationMonitor;
 import org.apache.commons.io.monitor.FileAlterationObserver;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.*;
 
 @Component
 public class LogFileListener {
-
+    @Autowired
+    private KafkaLogProducer kafkaLogProducer;
     private static Integer countLine = 0;
     private static Integer newLineCounter = 0;
 
     public LogFileListener() throws Exception{
+
         String dirName = "log/";
         FileAlterationObserver observer = new FileAlterationObserver(dirName);
         FileAlterationMonitor monitor = new FileAlterationMonitor(150);
@@ -57,12 +61,15 @@ public class LogFileListener {
                         // detect new line
                         if (newLineCounter<=countLine){
                             System.out.println(line);
+                            kafkaLogProducer.KafkaData(line.split("\\s+")[3],line);
                         }
                     }
                     reader.close();
                     newLineCounter = countLine;
                     countLine = 0;
                 } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
                 //System.out.println(countLine);

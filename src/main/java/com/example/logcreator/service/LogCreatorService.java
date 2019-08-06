@@ -39,8 +39,11 @@ public class LogCreatorService {
             count = 0;
         }
         fout = new File(filePath + "_" + filePathCount + ".txt");
+        fout.getParentFile().mkdirs();
         FileOutputStream fos = null;
+
         try {
+            fout.createNewFile();
             fos = new FileOutputStream(fout, true);
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
             Log log = createLog();
